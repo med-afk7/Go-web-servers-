@@ -1,0 +1,125 @@
+/* ============================================
+   SKILLS.CSS
+   ============================================ */
+
+.page-title {
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  margin-bottom: 4rem;
+  line-height: 1.08;
+}
+
+/* --- LAYOUT --- */
+.skills-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 5rem;
+}
+
+/* languages spans full width */
+.skill-group:first-child {
+  grid-column: 1 / -1;
+}
+
+/* --- GROUP LABEL --- */
+.skill-group-label {
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+/* --- BAR SKILLS --- */
+.skill-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.skill-item {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skill-name {
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.learning-badge {
+  font-size: .62rem;
+  padding: .1rem .4rem;
+  border: 1px solid var(--accent-dim);
+  border-radius: var(--radius);
+  color: var(--accent);
+  letter-spacing: .08em;
+}
+
+.skill-bar {
+  height: 4px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  width: var(--w);
+  background: var(--accent);
+  border-radius: 999px;
+  transform-origin: left;
+  animation: growBar .8s ease both;
+}
+
+.skill-fill.learning {
+  background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+  animation-delay: .3s;
+}
+
+@keyframes growBar {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* --- PILL SKILLS --- */
+.skill-pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+.skill-pill {
+  padding: .45rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--muted);
+  background: var(--surface);
+  transition: border-color .2s, color .2s, background .2s;
+  cursor: default;
+}
+
+.skill-pill:hover,
+.skill-pill.primary {
+  border-color: var(--accent-dim);
+  color: var(--text);
+  background: rgba(232,168,56,.06);
+}
+
+.skill-pill.primary {
+  color: var(--accent);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 680px) {
+  .skills-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .skill-group:first-child { grid-column: auto; }
+  .skill-item { grid-template-columns: 100px 1fr; }
+}

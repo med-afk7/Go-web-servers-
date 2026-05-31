@@ -1,0 +1,107 @@
+/* ============================================
+   ABOUT.CSS
+   ============================================ */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 5rem;
+  align-items: start;
+  margin-bottom: 5rem;
+}
+
+.about-heading {
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  line-height: 1.05;
+  position: sticky;
+  top: 6rem;
+}
+
+.about-heading .outline {
+  -webkit-text-stroke: 1.5px var(--text);
+  color: transparent;
+}
+
+.about-bio {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+  max-width: 52ch;
+}
+
+/* --- STAT ROW --- */
+.stat-row {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.stat-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stat-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: var(--muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-top: .3rem;
+}
+
+/* --- EDUCATION BLOCK --- */
+.edu-block {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.edu-icon {
+  font-size: 2.4rem;
+  flex-shrink: 0;
+}
+
+.edu-degree {
+  font-size: 1.3rem;
+  margin: .25rem 0;
+}
+
+.edu-school {
+  font-size: .8rem;
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+
+.edu-badge {
+  margin-left: auto;
+  padding: .5rem 1.2rem;
+  border: 1px solid var(--accent-dim);
+  border-radius: var(--radius);
+  color: var(--accent);
+  font-size: .8rem;
+  white-space: nowrap;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 720px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-heading { position: static; }
+  .edu-block { flex-direction: column; align-items: flex-start; }
+  .edu-badge { margin-left: 0; }
+}
